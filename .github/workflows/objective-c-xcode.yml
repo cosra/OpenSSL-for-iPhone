@@ -23,6 +23,7 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
+          TARGETS: "ios-sim-cross-x86_64 ios-sim-cross-arm64 ios-cross-arm64 mac-catalyst-x86_64 mac-catalyst-arm64"
         run: |
           sh build-libssl.sh
           cp /Users/runner/work/OpenSSL-for-iPhone/OpenSSL-for-iPhone/lib/libssl-iOS.a /Users/runner/work/OpenSSL-for-iPhone/lib/libssl.a
