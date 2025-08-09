@@ -28,7 +28,7 @@ jobs:
           mkdir -p lib
           cp lib/libssl-iOS.a lib/libssl.a
           cp lib/libcrypto-iOS.a lib/libcrypto.a
-          git add lib
-          git add include
+          git add -f lib
+          git add -f include
           git commit -m "build product"
           git push origin
