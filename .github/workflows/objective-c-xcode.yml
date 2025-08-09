@@ -25,3 +25,11 @@ jobs:
           scheme: ${{ 'default' }}
         run: |
           sh build-libssl.sh
+          cp /Users/runner/work/OpenSSL-for-iPhone/OpenSSL-for-iPhone/lib/libssl-iOS.a /Users/runner/work/OpenSSL-for-iPhone/lib/libssl.a
+          cp /Users/runner/work/OpenSSL-for-iPhone/OpenSSL-for-iPhone/lib/libcrypto-iOS.a /Users/runner/work/OpenSSL-for-iPhone/lib/libcrypto.a
+          cp -R /Users/runner/work/OpenSSL-for-iPhone/OpenSSL-for-iPhone/include/* /Users/runner/work/OpenSSL-for-iPhone/OpenSSL-for-iPhone/include/
+          cd /Users/runner/work/OpenSSL-for-iPhone
+          git add lib
+          git add include
+          git commit -m "build product"
+          git push origin
