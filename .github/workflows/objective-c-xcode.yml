@@ -25,7 +25,7 @@ jobs:
           scheme: ${{ 'default' }}
         run: |
           git rm -f lib/*
-          git rm -f include/openssl
+          git rm -f -r include/openssl
           sh build-libssl.sh --targets="ios-sim-cross-x86_64 ios-sim-cross-arm64 ios-cross-arm64 mac-catalyst-x86_64 mac-catalyst-arm64"
           mkdir -p lib
           #cp lib/libssl-iOS.a lib/libssl.a
