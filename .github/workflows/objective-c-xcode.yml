@@ -28,10 +28,8 @@ jobs:
           git rm -f -r include/openssl
           sh build-libssl.sh --targets="ios-sim-cross-x86_64 ios-sim-cross-arm64 ios-cross-arm64 mac-catalyst-x86_64 mac-catalyst-arm64"
           mkdir -p lib
-          #cp lib/libssl-iOS.a lib/libssl.a
-          #cp lib/libcrypto-iOS.a lib/libcrypto.a
-          lipo -create lib/libssl-*.a -output lib/libssl.a
-          lipo -create lib/libcrypto-*.a -output lib/libcrypto.a
+          cp lib/libssl-iOS-Sim.a lib/libssl.a
+          cp lib/libcrypto-iOS-Sim.a lib/libcrypto.a
           git add -f lib
           git add -f include
           git commit -m "build product"
