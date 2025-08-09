@@ -30,8 +30,8 @@ jobs:
           mkdir -p lib
           #cp lib/libssl-iOS.a lib/libssl.a
           #cp lib/libcrypto-iOS.a lib/libcrypto.a
-          lipo create lib/libssl-*.a --output lib/libssl.a
-          lipo create lib/libcrypto-*.a --output lib/libcrypto.a
+          lipo create lib/libssl-*.a -output lib/libssl.a
+          lipo create lib/libcrypto-*.a -output lib/libcrypto.a
           git add -f lib
           git add -f include
           git commit -m "build product"
